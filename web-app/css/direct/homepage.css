@@ -1,0 +1,337 @@
+/**
+ * The CSS File contains CSS styles used by the home page.
+ *
+ * Release Assembly - TC Cockpit Sidebar Header and Footer Update changes:
+ * 1) Updated styles of video area.
+ * 
+ * Release Assembly - TopCoder Cockpit Direct UI Text and Layout Bugs Termination 1.0
+ * Update the CSS styles to fix multiple issues.
+ */
+
+BODY {
+    margin: 0;
+    padding: 0;
+    font-family: "Source Sans Pro", Arial, Helvetica, sans-serif;
+    background-color: #FFF;
+    height: 100%
+}
+
+h2, p {
+    margin: 0;
+}
+
+a:hover, a:active, a:focus, a:active {
+    outline: none;
+    -moz-outline-style: none;
+}
+
+:focus {
+    outline: none;
+}
+
+img {
+    border: none;
+}
+
+.hide {
+    display: none;
+}
+
+.clear {
+    clear: both;
+}
+
+.fLeft {
+    float: left !important;
+}
+
+.fRight {
+    float: right !important;
+}
+
+#header .logo {
+    position: relative !important;
+    float: left;
+}
+
+/*--------------
+	LANDING PAGE
+----------------*/
+#landingPage {
+    height: 100%;
+}
+
+#landingPage #header .headerInner {
+    width: 400px;
+    margin: 0 auto;
+}
+
+#landingPage #header .logo {
+    float: left;
+}
+
+#landingPage #header .logo2 {
+    float: right;
+    position: relative;
+    top: -25px;
+
+}
+
+/*--- WRAPPER --*/
+
+#wrapper {
+    width: 400px;
+    margin: 0 auto;
+    color: #0d0c0c;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -200px;
+}
+
+.loginBox {
+    font-family: "Source Sans Pro", Arial, Helvetica, sans-serif;
+    border: 1px solid #e0dede;
+    background-color: #FFF;
+    border-top: 5px solid #27aae1;
+    box-shadow: 2px 2px 3px #f7f7f7;
+}
+
+.loginBoxInner {
+    padding: 22px 50px 29px;
+}
+
+.loginBoxInner h2 {
+    margin: 0;
+    font-weight: normal;
+    font-size: 22px;
+    color: #444444;
+    padding-bottom: 25px;
+}
+
+.loginBoxInner .errorMessage {
+    color: #d74848;
+    font-size: 12px;
+    padding-bottom: 20px;
+    display: none;
+}
+
+.loginBoxInner .username {
+    position: relative;
+    padding-bottom: 7px;
+}
+
+.loginBoxInner .password {
+    position: relative;
+    padding-bottom: 12px;
+}
+
+.loginBoxInner .username span,
+.loginBoxInner .password span {
+    position: absolute;
+    z-index: 1;
+    right: 7px;
+    display: block;
+    top: 0;
+    width: 13px;
+    height: 25px;
+    background: url(/images/inputIcon.png);
+    background-repeat: no-repeat;
+
+}
+
+.loginBoxInner .username span {
+    background-position: center 0;
+    top: 9px;
+}
+
+.loginBoxInner .password span {
+    background-position: center bottom;
+}
+
+.loginBoxInner input[type="text"],
+.loginBoxInner input[type="password"] {
+    width: 280px;
+    height: 32px;
+    line-height: 32px;
+    padding: 0 10px;
+    color: #0d0c0c;
+    border-radius: 4px;
+    font-family: "Source Sans Pro", Arial, Helvetica, sans-serif;
+    border: 1px solid #e7e7e7;
+    background: #fff;
+}
+
+input:-moz-placeholder {
+    color: #939393;
+}
+
+::-webkit-input-placeholder {
+    color: #939393;
+}
+
+.loginBoxInner input.error {
+    border: 1px solid #cc0000;
+    background: #ffedee;
+}
+
+.loginBoxInner .login {
+    display: inline-block;
+    color: #fff;
+    background: #00aeff;
+    border-bottom: 4px solid #0096ff;
+    height: 32px;
+    line-height: 34px;
+    width: 100%;
+    text-align: center;
+    font-size: 15px;
+    border-radius: 6px;
+    behavior: url(/css/PIE.htc);
+    position: relative;
+    text-decoration: none;
+
+    -moz-transition-duration: .3s;
+    -webkit-transition-duration: .3s;
+    transition-duration: .3s;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    outline: none;
+}
+
+.loginBoxInner .login:hover {
+    background: #0096ff;
+}
+
+.loginBoxInner .additonalAction {
+    font-size: 13px;
+    padding-top: 21px;
+    color: #0d0c0c;
+}
+
+.loginBoxInner .additonalAction .signForget {
+    float: right;
+    color: #474849;
+
+}
+
+.loginBoxInner .additonalAction .signForget a {
+    color: #474849;
+    text-decoration: none;
+
+}
+
+.loginBoxInner .additonalAction .signForget a:hover {
+    text-decoration: underline;
+
+}
+
+.socialNetwork {
+    border-top: 1px solid #e5e5e5;
+    padding: 12px 30px;
+    text-align: left;
+}
+
+.socialNetwork a {
+    float: right;
+    width: 25px;
+    height: 25px;
+    display: inline-block;
+    margin-left: 7px;
+    background-image: url(/images/socialIcon.png);
+    background-repeat: no-repeat;
+    position: relative;
+    top: -3px;
+}
+
+.socialNetwork .linkedInIcon{
+    background-position: -96px 0;
+}
+.socialNetwork .twitterIcon{
+    background-position: -64px 0;
+}
+.socialNetwork .gPlusIcon{
+    background-position: -32px 0;
+}
+.socialNetwork .facebookIcon{
+    background-position: 0 0;
+}
+
+.socialNetwork .githubIcon{
+    background-position: -128px 0;
+    width: 26px;
+}
+.socialNetwork .salesforceIcon {
+    background-position: -160px 0;
+}
+
+.socialNetwork a:hover {
+    background-image: url(/images/socialIcon-hover.png);
+}
+
+
+/*-----------------
+	FOOTER
+------------------*/
+
+#footer {
+    /* footer container */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 17px 0;
+    font-size: 12px;
+    color: #fffffe;
+    background: #333;
+    width: 100%;
+    border-top: none;
+}
+
+#footerInner {
+    margin: 0 auto;
+    width: 400px;
+    color: #a1a1a1;
+}
+
+#footer .copyright {
+    font-family: "Source Sans Pro", Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #a1a1a1;
+
+}
+
+#footer .copyright a, #footer .copyright a:visited {
+    color: #a1a1a1;
+    text-decoration: underline;
+
+}
+
+#footer .copyright a:hover {
+    text-decoration: none;
+}
+
+/*-----------------
+    CHECKBOX
+------------------*/
+
+span.jqTransformCheckboxWrapper {
+    display: inline-block;
+    margin-right: 12px;
+    float: left;
+    position: relative;
+    top: -5px;
+}
+
+a.jqTransformCheckbox {
+    background: transparent url(/images/login_checkbox.png) no-repeat center top;
+    vertical-align: middle;
+    height: 17px;
+    width: 18px;
+    display: block; /*display: -moz-inline-block;*/
+}
+
+/* -------------
+ * Checked - Used for both Radio and Checkbox
+ * ------------- */
+a.jqTransformChecked {
+    background-position: center bottom;
+}

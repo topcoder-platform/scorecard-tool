@@ -1,0 +1,21 @@
+@charset "utf-8";
+/* CSS Document */
+/* New Style */
+.resultDetails .backToList,
+.registrantsAndSubmissions .registrantsContaner .backToList{
+	top:6px;
+	}
+	
+.registrantsAndSubmissions .registrantsContaner .gridListView{
+	top:0;
+	}
+
+.registrationModule .content{
+    text-align: left;
+}
+#marathonMatchResults .bottom1{
+    top: -16px;
+}
+#marathonMatchResults .bottom2{
+    top: 2px;
+}

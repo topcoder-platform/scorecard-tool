@@ -1,0 +1,29 @@
+/**
+ * Author: TCSASSEMBLER
+ * Version: 1.0 (Module Assembly - Add Monthly Platform Fee Feature to Admin Page)
+ * Version: 1.1 (Release Assembly - TopCoder Cockpit Direct UI Text and Layout Bugs Termination 1.0)
+ * Copyright (C) 2012 TopCoder Inc., All Rights Reserved.
+ *
+ * The CSS File contains CSS styles used in customer platform fee JSP pages.
+ */
+.platformFeeContainer {
+    padding: 10px 20px;   
+}
+ 
+.platformFeeColumns {
+    position:relative;
+}
+
+.platformFeeColumn {
+    width: 33%;
+    height: 100px;
+    float: left;
+}
+
+.contentLbl {
+    font-weight: bold;   
+}
+.platformFeeColumns .text{
+    padding: 0 5px;
+    font-size: 11px;
+}

@@ -1,0 +1,600 @@
+/*
+ * Copyright (C) 2013 - 2014 TopCoder Inc., All Rights Reserved.
+
+ * CSS for filter panels.
+ *
+ * Change logs:
+ *
+ * Version 1.0 (TopCoder Direct Contest VM Instances Management )
+ * - Added new styles for Contest VM Instances Page.
+ *
+ * Version 1.1 (Release Assembly - TopCoder Direct VM Instances Management) changes:
+ * - Added new styles for Project VM Management Page.
+ *
+ * Version 1.2 (TC Direct Rebranding Assembly Project and Contest related pages)
+ * - Rebranding the filter panel in direct (the filter panel is used in multiple pages)
+ *
+ * Version 1.3 (TC Direct Rebranding Assembly Dashboard and Admin related pages)
+ * - Rebranding the filter panel in the dashboard related pages in direct
+ *
+ * @version 1.3
+ */
+.title {
+    font-family: "Source Sans Pro", Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #333;
+    font-weight: bold;
+}
+.filterContent .title{
+    color:#666;
+}
+.searchContainer .title{
+    color:#666;
+    font-weight: normal;
+
+}
+
+.filterPanel {
+    margin-bottom: 8px;
+}
+
+.filterPanel .filterHead {
+    height: 32px;
+    background: #f1f1f1;
+    border:1px solid #e7e7e7;
+    padding-left: 8px;
+}
+
+.filterPanel .filterHead .rightSide {
+    height: 32px;
+    padding-right: 13px;
+}
+
+.filterPanel .filterHead .inner {
+    height: 28px;
+}
+
+.filterPanel .filterHead .filterText {
+    width: 100px;
+    float: left;
+}
+
+.filterPanel .filterHead .inner .title {
+    line-height: 29px;
+}
+
+.filterPanel .filterHead .inner .expand, .filterPanel .filterHead .inner .collapse {
+    margin: 6px 10px 0 0;
+    float: left;
+}
+
+.filterPanel .filterHead .inner .searchContainer {
+    width: 310px;
+    float: right;
+    margin: 1px 0px;
+}
+
+.filterPanel .filterHead .inner .searchContainer .filterSearch {
+    width: 250px;
+    height: 20px;
+    border: 1px solid #c2c2c2;
+    float: right;
+    background: url(/images/filter-panel/search_icon.png) no-repeat 98% 3px #fff;
+    margin-top: 2px;
+}
+
+.filterPanel .filterHead .inner .searchContainer input {
+    width: 227px;
+    height: 20px;
+    border: none;
+    background: none;
+    padding: 0px 5px 5px 5px;
+    font-size: 11px;
+}
+
+.filterPanel .filterHead .inner .searchContainer a img {
+    position: absolute;
+    margin-top: 8px;
+    margin-left: -20px;
+}
+
+.filterPanel .filterBottom {
+    height: 6px;
+    padding-left: 6px;
+}
+
+.filterPanel .filterBottom .rightSide {
+    height: 6px;
+    padding-right: 6px;
+}
+
+.filterPanel .filterBottom .inner {
+    height: 6px;
+}
+
+.filterPanel .collapseBottom {
+    height: 5px;
+    padding-left: 7px;
+}
+
+.filterPanel .collapseBottom .rightSide {
+    height: 5px;
+    padding-right: 7px;
+}
+
+.filterPanel .collapseBottom .inner {
+    height: 5px;
+}
+
+.filterPanel .filterContent {
+    border:1px solid #e7e7e7;
+    border-top: none;
+    height: 90px;
+    padding-left: 6px;
+}
+
+.filterPanel .filterContent .rightSide {
+    height: 90px;
+    padding-right: 6px;
+}
+
+.filterPanel .filterContent .inner {
+}
+
+.filterPanel .filterContent .inner .column1 {
+    float: left;
+    width: 270px;
+    height: 65px;
+    margin-left: 15px;
+    min-width: 270px;
+}
+
+.filterPanel .filterContent .inner .row {
+    float: left;
+    margin-top: 10px;
+}
+
+.filterPanel .filterContent .inner .row .title {
+    font-size: 11px;
+    float: left;
+    line-height: 20px;
+}
+
+.filterPanel .filterContent .inner .column1 .row .title {
+    width: 115px;
+}
+
+.filterPanel .filterContent .inner .column1 .row .short {
+    width: 65px;
+}
+
+#customerFilter, #projectNameFilter, #copilotPostingStatusFilter {
+    width: 150px;
+}
+
+#allProjectsFilter #customerFilter {
+    width: 150px;
+}
+#projectManagerFilter {
+    width: 129px;
+}
+
+#copilotFilter {
+    width: 150px;
+}
+
+#projectStatusFilter {
+    width: 150px;
+}
+
+#contestTypeFilter, #contestStatusFilter {
+    width: 145px;
+}
+
+#CopilotPosingFilter .column1 {
+    min-width: 350px;
+}
+
+#CopilotPosingFilter .column1 .title {
+    width: 140px;
+}
+
+#ProjectsContestsFilter .column1 {
+    width: 38%;
+    min-width: 430px;
+}
+
+.filterPanel .filterContent .inner .column2 {
+    float: left;
+    width: 270px;
+    min-width: 270px;
+    height: 65px;
+    margin-left: -20px;
+    margin-right: 10px;
+}
+
+#allProjectsFilter.filterPanel .filterContent .inner .column2 {
+    width: 240px;
+    margin-left: 10px;
+    margin-right: -10px;
+}
+
+.filterPanel .filterContent .inner .column2 select {
+    width: 80px;
+
+}
+
+#allProjectsFilter.filterPanel .filterContent .inner .column2 select {
+    width: 120px;
+
+}
+
+#allProjectsFilter.filterPanel .filterContent .inner .column2 .title {
+    width: 120px;
+}
+
+.filterPanel .filterContent .inner .column2 .title {
+    width: 110px;
+}
+
+.filterPanel .filterContent .inner .column3 {
+    float: left;
+    width: 320px;
+    height: 65px;
+    margin-left: 15px;
+}
+
+.filterPanel .filterContent .inner .column3 .row {
+    margin-top: 8px;
+}
+
+.filterPanel .filterContent .inner .column3 input {
+    width: 60px;
+    border: 1px solid #e7e7e7;
+    border-radius: 4px;
+    height: 18px;
+    float: left;
+    color: #6c6c6c;
+    font-size: 11px;
+    font-family: Arial;
+    padding: 0px 5px;
+}
+
+.filterPanel .filterContent .inner .column3 .row .dateLabel {
+    width: 60px;
+}
+
+.filterPanel .filterContent .inner .column3 .row .toLabel {
+    font-size: 12px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+/* --- searchBar only --- */
+.searchBar {
+
+}
+
+.searchBar .filterHead {
+    margin-bottom: -2px;
+    width: 325px;
+}
+
+.searchBar .filterHead .filterSearch {
+    margin-top: 5px;
+}
+
+.searchBar .filterHead .inner .title {
+    line-height: 33px;
+}
+#pipelineSearchBar .filterHead .inner .title{
+    line-height: 27px;
+}
+
+.searchBar .collapseBottom {
+    width: 324px;
+}
+
+.filterContent a.dp-choose-date {
+    margin-right: 0px;
+}
+
+#ProjectsContestsFilter select {
+    width: 250px;
+}
+
+#allProjectsFilter.filterPanel .filterContent .inner .column3 .row .dateLabel {
+    width: 90px;
+}
+
+#allProjectsFilter.filterPanel .filterContent .inner .column3 {
+    width: 450px;
+}
+
+#VMFilter.filterPanel .filterContent .inner .column1 .row .title, #ContestVMFilter.filterPanel .filterContent .inner .column1 .row .title,
+#ProjectVMFilter.filterPanel .filterContent .inner .column1 .row .title  {
+    width: 115px;
+}
+
+#VMFilter.filterPanel .filterContent .inner .column3 .row .dateLabel, #ContestVMFilter.filterPanel .filterContent .inner .column3 .row .dateLabel,
+#ProjectVMFilter.filterPanel .filterContent .inner .column3 .row .dateLabel {
+    width:90px;
+}
+
+
+#VMFilter.filterPanel #contestNameFilter, #ContestVMFilter.filterPanel #contestNameFilter,
+#ProjectVMFilter.filterPanel #contestNameFilter {
+    width: 350px;
+}
+
+#ContestVMFilter.filterPanel #imageNameFilter {
+    width: 200px;
+}
+
+#ProjectVMFilter.filterPanel #imageNameFilter {
+      width: 200px;
+}
+
+#ContestVMFilter.filterPanel #vmStatusFilter, #ProjectVMFilter.filterPanel #vmStatusFilter {
+    width: 200px;
+}
+
+#ContestVMFilter.filterPanel #createdByFilter, #ProjectVMFilter.filterPanel #createdByFilter {
+    width: 200px;
+}
+
+#VMFilter.filterPanel #memberHandleFilter, #ContestVMFilter.filterPanel #memberHandleFilter,
+#ProjectVMFilter.filterPanel #memberHandleFilter {
+    width: 200px;
+}
+
+#VMFilter.filterPanel #vmUsageFilter, #ContestVMFilter.filterPanel #vmUsageFilter,
+#ProjectVMFilter.filterPanel #vmUsageFilter {
+    width: 250px;
+}
+
+#VMFilter.filterPanel .filterContent .inner .column1 {
+    width: 500px;
+}
+
+#ProjectVMFilter.filterPanel .filterContent .inner .column1,
+#ContestVMFilter.filterPanel .filterContent .inner .column1 {
+    width: 360px;
+}
+
+#enterpriseCalendarFilter {
+    margin-bottom: 20px;
+}
+
+#enterpriseCalendarFilter.filterPanel .filterContent .inner .column1,
+#enterpriseCalendarFilter.filterPanel .filterContent .inner .column2,
+#enterpriseCalendarFilter.filterPanel .filterContent .inner .column3 {
+    width: auto;
+    margin-left: 25px;
+    margin-right: 0px;
+    min-width: 0px;
+    margin-top: 10px;
+    height: 50px;
+}
+
+#enterpriseCalendarFilter.filterPanel .filterContent,
+#enterpriseCalendarFilter.filterPanel .filterContent .rightSide {
+    height: 50px;
+}
+
+#enterpriseCalendarFilter.filterPanel .filterContent .inner .column1 .row .title {
+    width: 70px;
+}
+
+#enterpriseCalendarFilter.filterPanel .filterContent .inner .column1 .row select {
+    width: 230px;
+}
+
+#enterpriseCalendarFilter.filterPanel .filterContent .inner .column2 .row select {
+    width: 200px;
+}
+
+#enterpriseCalendarFilter.filterPanel .filterContent .inner .column3 .row .title {
+    width: 130px;
+}
+
+#riskFilterPanelForm a.redBtn {
+    float: right;
+    margin-top: 5px;
+    margin-right: 5px;
+}
+
+a.redBtn {
+    margin: 0 auto;
+    display: inline-block;
+    height: 21px;
+    padding-left: 3px;
+    background: transparent url(/images/filter-panel/red-button.png) left top no-repeat;
+    overflow: hidden;
+    line-height: 20px;
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 11px;
+}
+a.redBtn span.left {
+    display: inline-block;
+    height: 21px;
+    width: 108px;
+    padding-right: 3px;
+    text-align: center;
+    background: url(/images/filter-panel/red-button-right.png) right top no-repeat;
+    overflow: hidden;
+    cursor: pointer;
+}
+a.redBtn:hover{
+    background-position:left -21px;
+}
+a.redBtn:hover span.left{
+    background-position:right -21px;
+}
+
+.riskPanel .filterContent {
+    height: 50px;
+    padding-left: 6px;
+}
+
+.riskPanel .filterContent .rightSide {
+    height: 50px;
+    padding-right: 6px;
+}
+
+.riskPanel .filterContent .inner .column1 {
+    float: left;
+    width: 85%;
+    height: 40px;
+    margin-left: 25px;
+    min-width: 400px;
+}
+
+.riskPanel .filterContent .inner select {
+    width: 50px;
+}
+
+.riskPanel .riskFilterPrefix {
+    font-family: "Source Sans Pro", Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    color: #333;
+    font-weight: bold;
+}
+
+.riskPanel .filterContent .inner .row {
+    padding-right: 35px;
+    width: auto;
+    float: left;
+    margin-top: 10px;
+}
+
+.riskPanel .filterContent .inner .column1 .row .title {
+    padding-right: 10px;
+    width: auto;
+}
+
+.riskPanel .filterContent .inner .column2 select {
+    width: 50px;
+
+}
+
+.riskPanel .filterContent .inner .column2 .title {
+    width: 60px;
+}
+
+.riskPanel .riskField .riskError {
+    font-size: 11px;
+    color: red;
+}
+
+.greenDiff {
+    color: green;
+}
+.greenDiff2 {
+    color: green;
+    margin-right: 20px;
+}
+.redDiff {
+    color: red;
+}
+.redDiff2 {
+    color: red;
+    margin-right: 20px;
+}
+
+#allProjectsPageContent #mainContent .search {
+    height: auto;
+    overflow: hidden;
+}
+
+#allProjectsPageContent #mainContent .search .datefilter {
+    float:left;
+}
+
+#allProjectsPageContent #mainContent .search .datefilter #startDate, #allProjectsPageContent #mainContent .search .datefilter #endDate {
+    width:80px;
+}
+
+#pmProjectsResult .budgetRow .costPercentage, #pmProjectsResult .budgetRow .allThreeCosts div {
+    font-weight:normal;
+}
+
+#pmProjectsResult .budgetRow .allThreeCosts {
+    width:180px;
+    font-weight:normal;
+}
+
+#pmProjectsResult .diffRow .diffPercentage, #pmProjectsResult .diffRow .allDiffInfo div {
+    font-weight:normal;
+}
+
+#pmProjectsResult .diffRow .allDiffInfo {
+    width:100px;
+    font-weight:normal;
+}
+
+#pmProjectsResult .durationRow .durationPercentage, #pmProjectsResult .durationRow .allThreeDurations div {
+    font-weight:normal;
+}
+
+#pmProjectsResult .durationRow .allThreeDurations {
+    width:180px;
+    font-weight:normal;
+}
+
+#pmProjectsResult .latestThreePostersDiv {
+    width: 180px;
+}
+
+#pmProjectsResult table th {
+    padding-bottom: 10px;
+}
+
+.selectFilter .column1 .row label,
+.selectFilter .column1 .row  span.label {
+    padding: 6px 0 0 0;
+    font-size: 11px;
+    font-weight: bold;
+    color: #010101;
+}        
+
+#VMFilter.filterPanel .filterContent .inner .column3, #ContestVMFilter.filterPanel .filterContent .inner .column3,
+#ProjectVMFilter.filterPanel .filterContent .inner .column3{
+    width: 350px;
+}
+
+#VMFilter.filterPanel .filterContent .inner .column1 .row, #ContestVMFilter.filterPanel .filterContent .inner .column1 .row,
+#ProjectVMFilter.filterPanel .filterContent .inner .column1 .row{
+    margin-top: 8px;
+}
+.selectFilter .column1 .row label,
+.selectFilter .column1 .row  span.label {
+    padding: 6px 0 0 0;
+    font-size: 11px;
+    font-weight: bold;
+    color: #010101;
+}        
+
+#uploadPanelForm .filterPanel .filterContent .inner {
+    padding: 10px 50px;
+}
+
+TABLE.contests TD.avoidWrapping {
+    font-size: 12px;
+}
+
+TABLE.contests TD.avoidWrapping SPAN {
+    font-weight: normal;
+    white-space: nowrap;
+}
+
+.operationDashboardFilterPanel .filterContent,
+.operationDashboardFilterPanel .filterContent .rightSide {
+    height: 110px;
+}
+
+#applyRiskFilters {
+    margin-top: 4px;
+}
