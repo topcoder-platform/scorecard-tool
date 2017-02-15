@@ -53,23 +53,23 @@ grails.'json-rest-api'.root = '/json'
 grails.naming.entries = [
     "TCS_CATALOG": [
         type: "javax.sql.DataSource",
-        auth: "Container", 
-        description: "Development Datasource", 
+        auth: "Container",
+        description: "Development Datasource",
         driverClassName: "com.informix.jdbc.IfxDriver",
-        url: "jdbc:informix-sqli://tc-informix:2021/tcs_catalog:INFORMIXSERVER=informixoltp_tcp;DB_LOCALE=en_us.utf8",
-        username: "informix",
-        password: "1nf0rm1x",
+        url: System.getenv("TCS_CATALOG_URL"),
+        username: System.getenv("TCS_CATALOG_USERNAME"),
+        password: System.getenv("TCS_CATALOG_PASSWORD"),
         maxActive: "8",
         maxIdle: "4"
     ],
 	"OLTP": [
         type: "javax.sql.DataSource",
-        auth: "Container", 
-        description: "Development Datasource", 
+        auth: "Container",
+        description: "Development Datasource",
         driverClassName: "com.informix.jdbc.IfxDriver",
-        url: "jdbc:informix-sqli://tc-informix:2021/informixoltp:INFORMIXSERVER=informixoltp_tcp;DB_LOCALE=en_us.utf8",
-        username: "informix",
-        password: "1nf0rm1x",
+        url: System.getenv("OLTP_URL"),
+        username: System.getenv("OLTP_USERNAME"),
+        password: System.getenv("OLTP_PASSWORD"),
         maxActive: "8",
         maxIdle: "4"
     ]
@@ -100,13 +100,13 @@ log4j = {
 
 	info   'com.topcoder.admin.scorecards.ScorecardController',
 		   'com.topcoder.scorecard.security'
-	
+
     info   'org.codehaus.groovy.grails.web.servlet',  //  controllers
            'org.codehaus.groovy.grails.web.pages', //  GSP
            'org.codehaus.groovy.grails.web.sitemesh', //  layouts
            'org.codehaus.groovy.grails.web.mapping.filter', // URL mapping
            'org.codehaus.groovy.grails.web.mapping', // URL mapping
-           'org.codehaus.groovy.grails.commons', // core / classloading           
+           'org.codehaus.groovy.grails.commons', // core / classloading
            'org.codehaus.groovy.grails.orm.hibernate', // hibernate integration
            'org.springframework',
            'org.hibernate',
