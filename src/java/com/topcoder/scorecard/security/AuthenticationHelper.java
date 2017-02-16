@@ -103,7 +103,7 @@ public class AuthenticationHelper {
 	}
 	
 	/**
-	 * Get the current user from <default>DIRECT SSO or TC SSO cookie.
+	 * Get the current user from DIRECT SSO or TC SSO cookie.
 	 * 
 	 * @param request the servlet http request
 	 * @param response the servlet http response
