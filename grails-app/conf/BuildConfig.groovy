@@ -32,16 +32,16 @@ grails.project.dependency.resolution = {
     }
 }
 
-grails.war.resources = { stagingDir, args ->
-	delete {
-		fileset(dir: "${stagingDir}/WEB-INF/lib", includes: "jta-1.1.jar")
-		fileset(dir: "${stagingDir}/WEB-INF/lib", includes: "shared.jar")
-		fileset(dir: "${stagingDir}/WEB-INF/lib", includes: "tcwebcommon.jar")
-		fileset(dir: "${stagingDir}/WEB-INF/lib", includes: "security.jar")
-		fileset(dir: "${stagingDir}/WEB-INF/lib", includes: "base_exception.jar")
-		fileset(dir: "${stagingDir}/WEB-INF/lib", includes: "log4j-1.2.16.jar")
-                fileset(dir: "${stagingDir}/css", includes: "**/*")
-                fileset(dir: "${stagingDir}/js", includes: "**/*") 
-                fileset(dir: "${stagingDir}/images", includes: "**/*")
-	}
-}
+//grails.war.resources = { stagingDir, args ->
+//	delete {
+//		fileset(dir: "${stagingDir}/WEB-INF/lib", includes: "jta-1.1.jar")
+//		fileset(dir: "${stagingDir}/WEB-INF/lib", includes: "shared.jar")
+//		fileset(dir: "${stagingDir}/WEB-INF/lib", includes: "tcwebcommon.jar")
+//		fileset(dir: "${stagingDir}/WEB-INF/lib", includes: "security.jar")
+//		fileset(dir: "${stagingDir}/WEB-INF/lib", includes: "base_exception.jar")
+//		fileset(dir: "${stagingDir}/WEB-INF/lib", includes: "log4j-1.2.16.jar")
+//                fileset(dir: "${stagingDir}/css", includes: "**/*")
+//                fileset(dir: "${stagingDir}/js", includes: "**/*")
+//                fileset(dir: "${stagingDir}/images", includes: "**/*")
+//	}
+//}
