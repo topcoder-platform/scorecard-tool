@@ -97,9 +97,13 @@ log4j = {
     //appenders {
     //    console name:'stdout', layout:pattern(conversionPattern: '%c{2} %m%n')
     //}
+    appenders {
+        console name: "stdout", threshold: org.apache.log4j.Level.DEBUG
+    }
 
-	info   'com.topcoder.admin.scorecards.ScorecardController',
-		   'com.topcoder.scorecard.security'
+    debug 'com.topcoder'
+	//info   'com.topcoder.admin.scorecards.ScorecardController',
+	//	   'com.topcoder.scorecard.security'
 
     info   'org.codehaus.groovy.grails.web.servlet',  //  controllers
            'org.codehaus.groovy.grails.web.pages', //  GSP
@@ -114,4 +118,5 @@ log4j = {
 
     warn   'org.mortbay.log',
 	       'org.codehaus.groovy.grails.plugins' // plugins
+
 }

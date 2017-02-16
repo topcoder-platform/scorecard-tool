@@ -6,10 +6,10 @@ package com.topcoder.scorecard.security;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.topcoder.shared.security.SimpleUser;
 import org.apache.log4j.Logger;
 
 import com.topcoder.security.RolePrincipal;
@@ -19,7 +19,6 @@ import com.topcoder.shared.dataAccess.DataAccess;
 import com.topcoder.shared.dataAccess.Request;
 import com.topcoder.shared.dataAccess.resultSet.ResultSetContainer;
 import com.topcoder.shared.security.Resource;
-import com.topcoder.shared.security.SimpleResource;
 import com.topcoder.shared.security.User;
 import com.topcoder.shared.util.DBMS;
 import com.topcoder.web.common.SimpleRequest;
@@ -38,11 +37,6 @@ import com.topcoder.web.common.security.SessionPersistor;
  */
 public class AuthenticationHelper {
 
-	/**
-	 * Scorecard Tool cookie.
-	 */
-	public static final String SSO_COOKIE = "direct_sso";
-	
 	/**
 	 * <p>Represents the name of the scorecard administrator role.</p>
 	 */
@@ -109,7 +103,7 @@ public class AuthenticationHelper {
 	}
 	
 	/**
-	 * Get the current user from DIRECT SSO or TC SSO cookie. 
+	 * Get the current user from <default>DIRECT SSO or TC SSO cookie.
 	 * 
 	 * @param request the servlet http request
 	 * @param response the servlet http response
@@ -118,23 +112,7 @@ public class AuthenticationHelper {
 	 */
 	public static User getCurrentUser(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		logger.debug("Entering method getCurrentUser");
-		// check user in DIRECT SSO cookie (logged from Direct web site)
-		User user = getUser(request, response, new SimpleResource(SSO_COOKIE));
-		
-		if (user == null || user.isAnonymous()) {
-			logger.warn("DIRECT SSO cookie not found. Trying TC SSO cookie");
-			
-			// check user in TC SSO cookie (logged from TC web site)
-			user = getUser(request, response, BasicAuthentication.MAIN_SITE);
-
-			if (user == null || user.isAnonymous()) {
-				logger.error("No user was found.");
-
-				return new SimpleUser(132456, "heffan", "password");
-			}				
-		}
-		
-		return user;		
+		return getUser(request, response, BasicAuthentication.MAIN_SITE);
 	}
 	
 	
@@ -147,7 +125,7 @@ public class AuthenticationHelper {
 	 */
 	public static void logout(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		BasicAuthentication auth = new BasicAuthentication(new SessionPersistor(request.getSession()), new SimpleRequest(request),
-				new SimpleResponse(response), new SimpleResource(SSO_COOKIE), DBMS.JTS_OLTP_DATASOURCE_NAME);
+				new SimpleResponse(response), BasicAuthentication.MAIN_SITE, DBMS.JTS_OLTP_DATASOURCE_NAME);
 		auth.logout();
 	}
 	
@@ -161,7 +139,7 @@ public class AuthenticationHelper {
 	 * @throws Exception if any error occurs
 	 */
 	private static User getUser(HttpServletRequest request, HttpServletResponse response, Resource cookie) throws Exception {
-		BasicAuthentication auth = new BasicAuthentication(new SessionPersistor(request.getSession()), new SimpleRequest(request), 
+		ScorecardBasicAuthentication auth = new ScorecardBasicAuthentication(new SessionPersistor(request.getSession()), new SimpleRequest(request),
 				new SimpleResponse(response), cookie, DBMS.JTS_OLTP_DATASOURCE_NAME);
 		return auth.getUser();
 	}
