@@ -1,0 +1,16 @@
+{
+  "AWSEBDockerrunVersion": "1",
+  "Authentication": {
+    "Bucket": "%S3_BUCKET%",
+    "Key": "services/common/tcdockercfg"
+  },
+  "Image": {
+    "Name": "appiriodevops/scorecard-tool:%TAG%",
+    "Update": "true"
+  },
+  "Ports": [
+    {
+      "ContainerPort": "8080"
+    }
+  ]
+}
