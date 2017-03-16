@@ -341,7 +341,7 @@
                                 </li>
 
                                 <li class="helloUserLink">
-                                    <a href="/direct/logout.action">Logout</a>
+                                    <a href="/scorecard/logout">Logout</a>
                                 </li>
 
                                 <li class="helloUserLink">

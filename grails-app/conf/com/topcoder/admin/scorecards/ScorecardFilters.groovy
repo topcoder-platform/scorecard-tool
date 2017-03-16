@@ -5,6 +5,7 @@ package com.topcoder.admin.scorecards
 
 import com.topcoder.security.TCSubject
 import com.topcoder.shared.security.User
+import com.topcoder.shared.util.ApplicationServer
 
 import com.topcoder.scorecard.security.AuthenticationHelper
 
@@ -30,9 +31,9 @@ class ScorecardFilters {
 
 					// Get current user from cookie
 					User user = AuthenticationHelper.getCurrentUser(request, response)
-					if (!user) {
+					if (!user || user.isAnonymous()) {
 						log.error "User is not authenticated. Redirecting to Login page."
-						redirect(url: '/direct/home.action')
+						redirect(url: 'https://' + ApplicationServer.SERVER_NAME + '/direct/home.action')
 						return false
 					}
 
@@ -51,7 +52,7 @@ class ScorecardFilters {
 
 				if (!hasDirectRole) {
 					log.error "User does not have scorecard admin role. Redirecting to Dashboard page."
-					redirect(url: '/direct/dashboardActive.action')
+					redirect(url: 'https://' + ApplicationServer.SERVER_NAME + '/direct/dashboardActive.action')
 					return false
 				}
 
