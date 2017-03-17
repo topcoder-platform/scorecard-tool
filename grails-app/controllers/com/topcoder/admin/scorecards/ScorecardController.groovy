@@ -9,7 +9,7 @@ import grails.converters.JSON
 import grails.util.GrailsNameUtils
 import net.sf.json.JSONObject
 
-import org.springframework.web.servlet.ModelAndView
+import com.topcoder.shared.util.ApplicationServer
 
 /**
  * This class is the <code>Controller</code> for <code>Scorecard</code> domain.
@@ -240,7 +240,7 @@ class ScorecardController {
 
 		// Redirect to logout
 		log.info "session invalidated. Redirecting to login."
-	  redirect(url: '/direct/home-redirect.jsp')
+	  redirect(url: 'https://' + ApplicationServer.SERVER_NAME + '/direct/home.action')
   }
 }
 
