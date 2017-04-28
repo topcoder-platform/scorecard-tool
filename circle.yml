@@ -12,6 +12,9 @@ test:
 
 deployment:
   development:
-    branch: master
+    branch: dev
     commands:
       - .deploy/ebs_deploy.sh scorecard-tool DEV $CIRCLE_BUILD_NUM
+    branch: master
+    commands:
+      - .deploy/ebs_deploy.sh scorecard-tool PROD $CIRCLE_BUILD_NUM
