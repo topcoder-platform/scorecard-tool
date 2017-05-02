@@ -46,3 +46,8 @@ after it.
 #
 ## Verification
 Open browser, go to http://<docker_ip>:8080/scorecard
+
+Install the `cookie inspector` extension to the browser. (I'm using Chrome for testing). 
+Add the cookie `tcsso_vm=132456|4a6acc4d5327773989a7e8c23b4e8cd1c3da79a125659973ed731ffaf24a2` as this screenshot: http://take.ms/PUSNt
+
+The result is like: http://take.ms/w5CZ2
