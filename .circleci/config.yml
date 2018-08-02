@@ -1,0 +1,66 @@
+version: 2
+
+# Python image to run aws utilities
+python_env: &python_env
+  docker:
+    - image: circleci/python:2.7-stretch-browsers
+
+# Instructions of installing aws utilities
+install_awscli: &install_awscli
+  name: "Install awscli"
+  command: |
+    sudo pip install awscli awsebcli --upgrade
+    aws --version
+    eb --version
+
+# Instructions of deployment
+deploy_steps: &deploy_steps
+  - checkout
+  - attach_workspace:
+      at: .
+  - run: *install_awscli
+  - setup_remote_docker
+  - run: .deploy/ebs_deploy.sh scorecard-tool $DEPLOY_ENV $CIRCLE_BUILD_NUM
+
+jobs:
+  build:
+    machine: true
+    steps:
+      - checkout
+      - run: 'docker run --rm -ti -v $PWD:/app onesysadmin/grails:1.3 grails war scorecard.war'
+      - persist_to_workspace:
+          root: .
+          paths:
+            - scorecard.war
+
+  deploy_prod:
+    <<: *python_env
+    environment:
+      DEPLOY_ENV: "PROD"
+    steps: *deploy_steps
+     
+  deploy_dev:
+    <<: *python_env
+    environment:
+      DEPLOY_ENV: "DEV"
+    steps: *deploy_steps
+
+workflows:
+  version: 2
+  build-and-deploy:
+    jobs:
+      - build
+      - deploy_dev:
+          filters:
+            branches:
+              only: 
+                - dev
+                - dev-circleci2
+          requires:
+            - build
+      - deploy_prod:
+          filters:
+            branches:
+              only: master
+          requires:
+            - build
