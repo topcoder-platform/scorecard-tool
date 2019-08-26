@@ -30,7 +30,7 @@
     <Resource name="java:comp/env/TCS_CATALOG" auth="Container"
           type="javax.sql.DataSource" 
           driverClassName="com.informix.jdbc.IfxDriver"
-          url="jdbc:informix-sqli://tc-informix:2021/informixoltp:INFORMIXSERVER=informixoltp_tcp;DB_LOCALE=en_us.utf8"
+          url="jdbc:informix-sqli://tc-informix:2021/tcs_catalog:INFORMIXSERVER=informixoltp_tcp;DB_LOCALE=en_us.utf8"
           username="informix" password="1nf0rm1x" maxActive="50" maxIdle="10"
           maxWait="5000"/>
 	
