@@ -55,7 +55,7 @@ grails.naming.entries = [
         type: "javax.sql.DataSource",
         auth: "Container",
         description: "Development Datasource",
-        driverClassName: "com.informix.jdbc.IfxDriver",
+        driverClassName: "org.postgresql.Driver",
         url: System.getenv("TCS_CATALOG_URL"),
         username: System.getenv("TCS_CATALOG_USERNAME"),
         password: System.getenv("TCS_CATALOG_PASSWORD"),
