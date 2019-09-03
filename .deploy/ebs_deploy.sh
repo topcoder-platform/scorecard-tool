@@ -35,9 +35,12 @@ export AWS_SECRET_ACCESS_KEY=$(eval "echo \$${ENV}_AWS_SECRET_ACCESS_KEY")
 
 # eb deploy
 cd .deploy
-eb init -r us-east-1 $SERVICE
+#eb init -r us-east-1 $SERVICE
+eb init --region us-east-1 --platform docker-18.06.1-ce scorecard-tool
 #EB_OUTPUT="$(eb deploy -l $TAG -r us-east-1)"
-EB_OUTPUT="$(eb deploy $EBS_ENVIRONMENT -l $TAG -r us-east-1)"
+#EB_OUTPUT="$(eb deploy $EBS_ENVIRONMENT -l $TAG -r us-east-1)"
+EB_OUTPUT="$(eb deploy scorecard-tool-dev-pg -l $TAG -r us-east-1)"
+
 
 echo $EB_OUTPUT
 if [[ $EB_OUTPUT =~ .*ERROR.* ]]
