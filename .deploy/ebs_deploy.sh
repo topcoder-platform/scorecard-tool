@@ -38,6 +38,7 @@ cd .deploy
 eb init -r us-east-1 $SERVICE
 #EB_OUTPUT="$(eb deploy -l $TAG -r us-east-1)"
 EB_OUTPUT="$(eb deploy $EBS_ENVIRONMENT -l $TAG -r us-east-1)"
+
 echo $EB_OUTPUT
 if [[ $EB_OUTPUT =~ .*ERROR.* ]]
 then
