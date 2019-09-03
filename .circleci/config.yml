@@ -20,7 +20,8 @@ deploy_steps: &deploy_steps
       at: .
   - run: *install_awscli
   - setup_remote_docker
-  - run: .deploy/ebs_deploy.sh scorecard-tool $DEPLOY_ENV $CIRCLE_BUILD_NUM
+ # - run: .deploy/ebs_deploy.sh scorecard-tool $DEPLOY_ENV $CIRCLE_BUILD_NUM
+  - run: .deploy/ebs_deploy.sh scorecard-tool $DEPLOY_ENV $CIRCLE_BUILD_NUM "scorecard-tool-dev-pg"
 
 jobs:
   build:
@@ -55,7 +56,7 @@ workflows:
             branches:
               only: 
                 - dev
-                - dev-circleci2
+                - dev-pg
           requires:
             - build
       - deploy_prod:
