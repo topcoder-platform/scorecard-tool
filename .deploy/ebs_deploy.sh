@@ -32,7 +32,6 @@ sed -i='' "s/%TAG%/$TAG/;s/%S3_BUCKET%/$S3_BUCKET/" .deploy/Dockerrun.aws.json
 
 export AWS_ACCESS_KEY_ID=$(eval "echo \$${ENV}_AWS_ACCESS_KEY_ID")
 export AWS_SECRET_ACCESS_KEY=$(eval "echo \$${ENV}_AWS_SECRET_ACCESS_KEY")
-
 # eb deploy
 cd .deploy
 #eb init -r us-east-1 $SERVICE
