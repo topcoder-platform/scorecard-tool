@@ -45,7 +45,7 @@
               pathname="conf/tomcat-users.xml" />
     <Resource name="java:comp/env/TCS_CATALOG" auth="Container"
               type="javax.sql.DataSource"
-              driverClassName="com.informix.jdbc.IfxDriver"
+              driverClassName="org.postgresql.Driver"
               url="@TCS_CATALOG_URL@"
               username="@TCS_CATALOG_USERNAME@" password="@TCS_CATALOG_PASSWORD@" maxActive="50" maxIdle="10"
               maxWait="5000"/>

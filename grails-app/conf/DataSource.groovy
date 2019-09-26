@@ -16,7 +16,7 @@ environments {
             // url = "jdbc:hsqldb:mem:devDB"
             // dbCreate = "create-drop"
 
-            driverClassName = "com.informix.jdbc.IfxDriver"
+            driverClassName = "org.postgresql.Driver"
             url = System.getenv("TCS_CATALOG_URL")
             username = System.getenv("TCS_CATALOG_USERNAME")
             password = System.getenv("TCS_CATALOG_PASSWORD")
@@ -32,7 +32,7 @@ environments {
     }
     production {
         dataSource {
-            driverClassName = "com.informix.jdbc.IfxDriver"
+            driverClassName = "org.postgresql.Driver"
             url = System.getenv("TCS_CATALOG_URL")
             username = System.getenv("TCS_CATALOG_USERNAME")
             password = System.getenv("TCS_CATALOG_PASSWORD")
