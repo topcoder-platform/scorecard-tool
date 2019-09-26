@@ -54,13 +54,12 @@ workflows:
           filters:
             branches:
               only: 
-                - dev
-                - dev-circleci2
+                - dev-pg
           requires:
             - build
       - deploy_prod:
           filters:
             branches:
-              only: master
+              only: master-pg
           requires:
             - build
