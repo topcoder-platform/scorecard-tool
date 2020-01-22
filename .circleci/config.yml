@@ -6,23 +6,43 @@ python_env: &python_env
     - image: circleci/python:2.7-stretch-browsers
 
 # Instructions of installing aws utilities
-install_awscli: &install_awscli
-  name: "Install awscli"
+install_dependency: &install_dependency
+  name: Installation of build and deployment dependencies.
   command: |
-    sudo pip install awscli awsebcli --upgrade
-    aws --version
-    eb --version
-
+    sudo apt install jq
+    sudo pip install awscli --upgrade
+    sudo pip install docker-compose
+install_deploysuite: &install_deploysuite
+  name: Installation of install_deploysuite.
+  command: |
+    git clone --branch v1.4.2 https://github.com/topcoder-platform/tc-deploy-scripts ../buildscript
+    cp ./../buildscript/master_deploy.sh .
+    cp ./../buildscript/buildenv.sh .
+    cp ./../buildscript/awsconfiguration.sh .
 # Instructions of deployment
 deploy_steps: &deploy_steps
   - checkout
   - attach_workspace:
       at: .
-  - run: *install_awscli
   - setup_remote_docker
+  - run: *install_dependency
+  - run: *install_deploysuite
  # - run: .deploy/ebs_deploy.sh scorecard-tool $DEPLOY_ENV $CIRCLE_BUILD_NUM
-  - run: .deploy/ebs_deploy.sh scorecard-tool $DEPLOY_ENV $CIRCLE_BUILD_NUM "scorecard-tool-prod-pg"
 
+  - run: docker build -t $APPNAME:latest -f docker/tomcat/Dockerfile .
+  - deploy:
+      name: Running MasterScript.
+      command: |
+        ./awsconfiguration.sh $DEPLOY_ENV
+        source awsenvconf
+        ./buildenv.sh -e $DEPLOY_ENV -b ${LOGICAL_ENV}-${APPNAME}-deployvar
+        source buildenvvar
+        ./master_deploy.sh -d ECS -e $DEPLOY_ENV -t latest -s ${LOGICAL_ENV}-${APPNAME}-appvar -i ${APPNAME}
+
+
+
+ # - run: .deploy/ebs_deploy.sh scorecard-tool $DEPLOY_ENV $CIRCLE_BUILD_NUM "scorecard-tool-dev-pg"
+ # - deploy: masterscript
 jobs:
   build:
     machine: true
@@ -38,12 +58,16 @@ jobs:
     <<: *python_env
     environment:
       DEPLOY_ENV: "PROD"
+      LOGICAL_ENV: "prod"
+      APPNAME: "scorecard-tool"
     steps: *deploy_steps
      
   deploy_dev:
     <<: *python_env
     environment:
       DEPLOY_ENV: "DEV"
+      LOGICAL_ENV: "dev"
+      APPNAME: "scorecard-tool"
     steps: *deploy_steps
 
 workflows:
@@ -52,13 +76,16 @@ workflows:
     jobs:
       - build
       - deploy_dev:
+          context : org-global
           filters:
             branches:
               only: 
                 - dev-pg
+                - dev-pg-ecs
           requires:
             - build
       - deploy_prod:
+          context : org-global
           filters:
             branches:
               only: master-pg
