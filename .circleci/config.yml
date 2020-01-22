@@ -28,6 +28,7 @@ deploy_steps: &deploy_steps
   - run: *install_dependency
   - run: *install_deploysuite
  # - run: .deploy/ebs_deploy.sh scorecard-tool $DEPLOY_ENV $CIRCLE_BUILD_NUM
+
   - run: docker build -t $APPNAME:latest -f docker/tomcat/Dockerfile .
   - deploy:
       name: Running MasterScript.
@@ -37,6 +38,8 @@ deploy_steps: &deploy_steps
         ./buildenv.sh -e $DEPLOY_ENV -b ${LOGICAL_ENV}-${APPNAME}-deployvar
         source buildenvvar
         ./master_deploy.sh -d ECS -e $DEPLOY_ENV -t latest -s ${LOGICAL_ENV}-${APPNAME}-appvar -i ${APPNAME}
+
+
 
  # - run: .deploy/ebs_deploy.sh scorecard-tool $DEPLOY_ENV $CIRCLE_BUILD_NUM "scorecard-tool-dev-pg"
  # - deploy: masterscript
